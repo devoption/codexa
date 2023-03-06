@@ -1,0 +1,202 @@
+/* @import url('~/highlight.js/styles/nord.css'); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* CSS Variables */
+
+:root {
+    --color-primary: #16BAC5;
+    --color-secondary: #416788;
+    --color-alert-info: #57C4E5;
+    --color-alert-success: #5CFFAD;
+    --color-alert-warning: #ECDD7B;
+    --color-alert-danger: #E01A4F;
+    --color-gray-900: #0C0D12;
+    --color-gray-800: #12141C;
+    --color-gray-700: #171923;
+    --color-gray-600: #252A37;
+    --color-gray-500: #394056;
+    --color-gray-400: #B5B5BD;
+    --color-gray-300: #d7d7dc;
+    --color-gray-200: #e7e8f2;
+    --color-gray-100: #f5f5fa;
+    --color-gray-50: #fbfbfd;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+#docs_sidebar a {
+    @apply py-3 text-sm font-extrabold text-gray-500 dark:text-gray-400;
+    transition: all .3s ease;
+}
+
+#docs_sidebar a:hover {
+    transform: translate3d(5px, 0, 0);
+}
+
+#docs_sidebar a.active::before {
+    content: '#';
+    @apply text-primary
+}
+
+#main-content {
+    @apply text-gray-500 dark:text-gray-300 mb-24;
+}
+
+#main-content .code-block-wrapper .copyBtn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: var(--color-gray-800);
+    color: var(--color-gray-100);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+#main-content blockquote > div {
+    background-color: var(--color-gray-700);
+    color: var(--color-gray-100);
+}
+
+#main-content li a:before,
+#main-content h1:before,
+#main-content h2:before,
+#main-content h3:before,
+#main-content h4:before,
+#main-content h5:before,
+#main-content h6:before {
+    content: '#';
+    @apply mr-4;
+}
+
+#main-content h1 {
+    color: var(--color-primary);
+    @apply text-3xl font-bold my-8;
+}
+
+#main-content h2 {
+    color: var(--color-primary);
+    @apply text-2xl font-bold my-6;
+}
+
+#main-content h3 {
+    color: var(--color-primary);
+    @apply text-xl font-bold my-4;
+}
+
+#main-content h4 {
+    color: var(--color-secondary);
+    @apply text-lg font-bold my-2;
+}
+
+#main-content h5 {
+    color: var(--color-secondary);
+    @apply text-base font-bold my-2;
+}
+
+#main-content h6 {
+    color: var(--color-secondary);
+    @apply text-sm font-bold my-2;
+}
+
+#main-content a {
+    color: var(--color-primary);
+}
+
+#main-content a:before {
+    content: '#';
+    @apply mr-4;
+}
+
+#main-content a:hover {
+    color: var(--color-secondary);
+    @apply underline;
+}
+
+#main-content hr {
+    @apply my-6 dark:border-gray-700 border-gray-200;
+}
+
+#main-content strong {
+    @apply font-bold text-xl;
+}
+
+#main-content ul {
+    @apply my-6;
+}
+
+#main-content ol {
+    @apply my-6 list-decimal ml-6;
+}
+
+#main-content li {
+    @apply ml-6;
+}
+
+#main-content ul > li:first,
+#main-content ol > li:first {
+    @apply flex;
+}
+
+#main-content ul > li:before {
+    content: '-';
+    @apply mr-4 text-primary;
+}
+
+#main-content ol > li::marker {
+    color: var(--color-primary);
+}
+
+#main-content blockquote {
+    @apply my-6 border-l-4 border-primary px-6 bg-gray-200 dark:bg-gray-700 py-4;
+}
+
+#main-content p {
+    @apply my-6;
+}
+
+#main-content code {
+    @apply dark:bg-gray-900 bg-gray-300 px-2 rounded;
+}
+
+#main-content pre {
+    position: relative;
+    color: var(--color-gray-100);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    @apply bg-gray-900;
+}
+
+#main-content pre code {
+    @apply bg-gray-900 px-0;
+}
+
+#main-content table {
+    @apply table-auto;
+}
+
+#main-content table th {
+    @apply bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-100 px-4 py-3;
+}
+
+#main-content table td {
+    @apply bg-gray-50 dark:bg-gray-800 text-gray-500 dark:text-gray-100 py-2 px-4;
+}
+
+#main-content input[type="checkbox"]  {
+    @apply h-5 w-5 rounded border border-gray-300 dark:border-gray-500 bg-gray-50 dark:bg-gray-600 my-3;
+}
+
+#main-content input[type="checkbox"]:checked {
+    @apply bg-primary border-0;
+}
