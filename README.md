@@ -33,8 +33,9 @@ And that's it! You are now ready to start using Codexa.
 
 ## Screenshots
 
-![Codexa Screenshot](https://raw.githubusercontent.com/devoption/codexa/main/docs/images/codexa-screenshot-light.png)
-![Codexa Screenshot](https://raw.githubusercontent.com/devoption/codexa/main/docs/images/codexa-screenshot-dark.png)
+![Codexa Screenshot - Light](https://github.com/devoption/codexa/blob/main/docs/images/codexa-screenshot-light.png)
+![Codexa Screenshot - Dark](https://github.com/devoption/codexa/blob/main/docs/images/codexa-screenshot-dark.png)
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
