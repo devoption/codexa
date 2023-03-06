@@ -1,66 +1,44 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# DevOption Codexa
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Codexa is a static documentation site generator for Software Engineering teams. It is built using the [Laravel](https://laravel.com/) framework and uses Git as a data source for the documentation.
 
-## About Laravel
+Documentation for your projects is important. It helps you and your team to understand the project and how it works. It also helps other people to understand your project and how to use it. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> If you are working on an open source project, documentation is even more important. It helps other people to understand your project and how to use it. It also helps you to get more contributors and more users.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Codexa is here to help you organize and deliver your documentation that is simple to maintain and easy to use.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Getting Started
 
-## Learning Laravel
+To start using Codexa, you need to create a new Git repository to store your documentation in Markdown format. You can use any Git hosting service you want. We recommend using [GitHub](https://github.com) or [GitLab](https://gitlab.com). 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+> You can use an existing repository if you want. But we recommend creating a new one.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Once you have created your repository, you can use Docker to run Codexa. You can use the following command to run Codexa:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+docker run -d \
+    -e DOCS_REPOSITORY=https://github.com/devoption/docs.git \
+    -e DOCS_BRANCH=main \
+    -e DOCS_ACCESS_TOKEN=<your-personal-access-token> \
+    -p 80:80 \
+    -v devoption/codexa
+```
 
-## Laravel Sponsors
+Running this Docker command will start Codexa and it will automatically fetch your documentation from your Git repository. You can then access your documentation on port 80 (or any port you entered into the command).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Codexa will then automatically fetch your documentation from your Git repository every hour. You can change this interval by setting the `DOCS_FETCH_INTERVAL` environment variable.
 
-### Premium Partners
+And that's it! You are now ready to start using Codexa.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Screenshots
 
-## Contributing
+![Codexa Screenshot](https://raw.githubusercontent.com/devoption/codexa/main/docs/images/codexa-screenshot-light.png)
+![Codexa Screenshot](https://raw.githubusercontent.com/devoption/codexa/main/docs/images/codexa-screenshot-dark.png)
+## License
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+If you discover a security vulnerability within Codexa, please send an e-mail to [Codexa](mailto:security@devoption.io). All security vulnerabilities will be promptly addressed.
