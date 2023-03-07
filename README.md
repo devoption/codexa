@@ -21,8 +21,8 @@ docker run -d \
     -e DOCS_REPOSITORY=https://github.com/devoption/docs.git \
     -e DOCS_BRANCH=main \
     -e DOCS_ACCESS_TOKEN=<your-personal-access-token> \
-    -p 80:80 \
-    -v devoption/codexa
+    -p 80:8000 \
+    devoption/codexa
 ```
 
 Running this Docker command will start Codexa and it will automatically fetch your documentation from your Git repository. You can then access your documentation on port 80 (or any port you entered into the command).
