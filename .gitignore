@@ -6,6 +6,7 @@
 /resources/docs
 /storage/*.key
 /vendor
+.DS_Store
 .env
 .env.backup
 .env.production
