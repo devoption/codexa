@@ -187,6 +187,7 @@ return [
         'database',
         'public/**/*.php',
         'resources/**/*.php',
+        'resources/docs',
         'routes',
         'composer.lock',
         '.env',

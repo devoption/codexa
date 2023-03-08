@@ -60,6 +60,16 @@ COPY --from=node /app/public /var/www/html/public
 RUN chmod -R 777 /var/www/html/storage
 RUN chmod -R 777 /var/www/html/bootstrap/cache
 
+################################################################################
+# Setup Cron
+################################################################################
+
+RUN echo "* * * * * php81 /var/www/html/artisan schedule:run >> /var/www/html/storage/logs/cron.log 2>&1" >> /var/spool/cron/crontabs/root
+
+################################################################################
+# Configure the Container
+################################################################################
+
 WORKDIR /var/www/html
 
 EXPOSE 8000
@@ -68,4 +78,4 @@ EXPOSE 8000
 # Start Web Server
 ################################################################################
 
-ENTRYPOINT [ "php81", "artisan", "octane:start", "--server=swoole", "--host=0.0.0.0" ]
+CMD crond && php81 artisan octane:start --server=swoole --host=0.0.0.0
