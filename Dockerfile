@@ -34,7 +34,7 @@ FROM alpine:3.17
 # Install Dependencies
 ################################################################################
 
-RUN apk add --no-cache bash curl g++
+RUN apk add --no-cache git bash curl g++
 
 ################################################################################
 # Install PHP 8.1
@@ -60,11 +60,16 @@ COPY --from=node /app/public /var/www/html/public
 RUN chmod -R 777 /var/www/html/storage
 RUN chmod -R 777 /var/www/html/bootstrap/cache
 
+RUN cp /var/www/html/.env.example /var/www/html/.env
+RUN php81 /var/www/html/artisan key:generate
+
 ################################################################################
 # Setup Cron
 ################################################################################
 
-RUN echo "* * * * * php81 /var/www/html/artisan schedule:run >> /var/www/html/storage/logs/cron.log 2>&1" >> /var/spool/cron/crontabs/root
+RUN echo "* * * * * php81 /var/www/html/artisan schedule:run >> \
+    /var/www/html/storage/logs/cron.log 2>&1"                   \
+    >> /var/spool/cron/crontabs/root
 
 ################################################################################
 # Configure the Container

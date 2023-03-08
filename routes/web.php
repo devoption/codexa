@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/docs-update', function() {
+    Artisan::call('docs:update');
+    return redirect('/');
+});
 
 Route::get('/{file?}', function ($file = 'home') {
     $index = file_get_contents(resource_path('docs/index.md'));
@@ -81,8 +87,6 @@ Route::get('/{file?}', function ($file = 'home') {
 
         $i++;
     }
-
-    // dd($links, $parent_active);
 
     return view('welcome')
         ->with([

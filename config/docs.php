@@ -31,7 +31,7 @@ return [
      * access token to access the repository.
      *
      */
-    'access_token' => env('DOCS_ACCESS_TOKEN', ''),
+    'access_token' => env('DOCS_ACCESS_TOKEN'),
 
     /**
      * ---------------------------------------------------------
