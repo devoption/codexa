@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build the Docker Image
-        run: docker build . --file Dockerfile --tag ghcr.io/${{ github.repository_owner }}/codexa:${{ github.sha }}
+        run: docker build . --file Dockerfile --tag ghcr.io/${{ github.repository_owner }}/codexa:${{ github.sha }} --tag ghcr.io/${{ github.repository_owner }}/codexa:latest
 
       - name: Login to GitHub Container Registry
         if: github.event_name == 'push'
@@ -28,4 +28,4 @@ jobs:
 
       - name: Push the Docker Image to GitHub Container Registry
         if: github.event_name == 'push'
-        run: docker push ghcr.io/${{ github.repository_owner }}/codexa:${{ github.sha }}
+        run: docker push ghcr.io/${{ github.repository_owner }}/codexa:${{ github.sha }} && docker push ghcr.io/${{ github.repository_owner }}/codexa:latest
